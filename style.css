@@ -1,7 +1,90 @@
-/*Setting up the font as Open Sans for my Portfolio */
+/* Setting up the sizing of the boxes */
+/* The below styling means that the sizing,margin,padding is constant throughout the website */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+} 
 
-body{
+/*Setting some colors for this stylesheet using css variables*/
+:root {
+    --base: #555;
+    --base-100: #f1f1f1;
+    --base-400: #555;
+    --base-800: #000;
+    --yellow: #ffda4b;
+    --yellow-100: #fffbe6;
+    --yellow-400: #ffda4b;
+    --yellow-800: #8b6f00;
+    --blue: #0a61ae;
+    --blue-100: #e2f8ff;
+    --blue-400: #61dafb;
+    --blue-800: #0a61ae;
+}
+
+/* Setting up the font as Open Sans for my Portfolio */
+body {
     font-family: "Open Sans", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
+    font-size: 20px;
+}
+
+/*Removing the underlines of all the anchor tags and color is also changed */
+a {
+    text-decoration: none;
+    color: var(--blue);
+
+    /*To know that it's still a part of anchor tag*/
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+/* Creating a styling section for header tag using nesting */
+header {
+    /*Applying Padding so that it does not stick to corners */
+    padding-top:10px; 
+    padding-bottom:10px;
+
+    /*For greater flexibility*/
+    display:flex;  
+
+    /*To push logo section on the left & menu on the right hand side*/
+    justify-content: space-between;
+
+    max-width:1440px;
+
+    /*Setting margin to auto so that if screen's size is very big the website content centers itself*/
+    margin:auto;
+    
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    
+    /*To set up the logo*/
+    .logo-holder {
+        
+        display:flex;
+        padding:10px;
+
+        
+        .logo {
+            display:flex;
+            /*To set the text inside logo in middle*/
+            align-items: center;
+            justify-content: center;
+            font-size:32px;
+            background-color: var(--base-800);
+            color:var(--base-100);
+            height:64px;
+            width:64px;
+            margin-right:20px;
+            border-radius:50%;
+        }
+        .logo-text {
+
+        }
+    }
+    nav{
+
+    }
 }
