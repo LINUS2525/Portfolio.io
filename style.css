@@ -66,7 +66,10 @@ header {
         display:flex;
         padding:10px;
 
-        
+        /* To align logo and side text in  the same line */
+        align-items:center;
+        font-weight:600;
+        color: var(--base-800);
         .logo {
             display:flex;
             /*To set the text inside logo in middle*/
@@ -81,10 +84,84 @@ header {
             border-radius:50%;
         }
         .logo-text {
+            flex:1;
 
         }
     }
-    nav{
+    nav {
+        display:flex;
+        align-items: center;
+        ul {
+           display:flex;
+           list-style-type: none;
+           gap:5px;
+           li {
+            display: inline-block;
+            a {
+                display: inline-block;
+                padding: 10px 20px;
+                color:var(--base);
 
+                /*To make the anchor tags like a button*/
+                &:hover {
+                    background-color: var(--base-100);
+                    border-radius:10px;
+                    text-decoration: none;
+                }
+            }
+           }
+        }
+        .mobile-toggle {
+            display:none;
+            color:var(--base-800);
+            padding: 10px;
+            @media (max-width:768px) {
+                display: inline-block;
+
+                /*To make the position of the toggle-bar wrt closest ancestor*/
+                position: absolute;
+                top:20px;
+                right:20px;
+            }
+
+        }
     }
+    
+    /* To make the header responsive */
+
+    /*Ipad View Port*/
+    @media (max-width:1024px) {
+        flex-direction:column;
+        align-items: center;
+    }
+
+
+    /*Mobile View Port*/
+     @media (max-width:768px) {
+        flex-direction:column;
+        align-items: center;
+
+        nav {
+            margin-top:10px;
+            width:100%;
+            ul {
+                display:none;
+                flex-direction: column;
+                text-align:center;
+                width: 100%;
+
+                /*For utilizing full width across the menu*/
+                a {
+                    width:100%;
+                }
+                &.active {
+                    display: flex;
+                }
+            }
+        }
+     }
+
+
+
+
 }
